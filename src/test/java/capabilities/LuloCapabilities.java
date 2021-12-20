@@ -39,7 +39,7 @@ public class LuloCapabilities {
             capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, iOS_DEVICE);
             capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, iOS_VERSION);
             if (SO.contains(WINDOWS)) capabilities.setCapability(MobileCapabilityType.APP, APK_LOCATION_W); else capabilities.setCapability(MobileCapabilityType.APP, APK_LOCATION_M);
-            capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, ANDROID_AUTOMATION);
+            capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, iOS_AUTOMATION);
             capabilities.setCapability(MobileCapabilityType.CLEAR_SYSTEM_FILES, true);
             iosDriver = new IOSDriver(url, capabilities);
             iosDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);

@@ -30,6 +30,7 @@ public class LuloRunner {
         steps.scaleneTrianqle();
     }
 
+    //TODO: Validar estado de la aplicación esta en la actividad o murio?
     @After
     public void close() {
 

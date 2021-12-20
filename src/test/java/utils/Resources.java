@@ -7,13 +7,19 @@ public class Resources {
     public static final String WINDOWS = "Windows";
     public static final String USER_DIR = "user.dir";
     public static final String URL_STRING = "http://127.0.0.1:4723/wd/hub";
+
+    //Android
     public static final String ANDROID_DEVICE = "Pixel 3a API 28";
     public static final String ANDROID_VERSION = "9.0";
     public static final String ANDROID_AUTOMATION = "UiAutomator2";
 
     //iOS
     public static final String IOS = "iOS";
-    public static final String iOS_DEVICE = "Pixel 3a API 28";
-    public static final String iOS_VERSION = "9.0";
-    public static final String iOS_AUTOMATION = "UiAutomator2";
+    public static final String iOS_DEVICE = "iPhone 7";
+    public static final String iOS_VERSION = "11.0";
+    public static final String iOS_AUTOMATION = "XCUITest";
+
+    //Triangle options
+    public static final String TRIANGLE_EMPTY = "Preencha todos os campos";
+    public static final String SCALENE_TRIANGLE = "O triângulo é Escaleno";
 }
