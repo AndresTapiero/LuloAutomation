@@ -2,11 +2,13 @@ package utils;
 
 public class Resources {
 
+    public static final String BUNDLE_ID = "com.eliasnogueira.trianguloapp";
+    public static final String APP_RUNNING_FOREGROUND = "RUNNING_IN_FOREGROUND";
+
     //Capabilities
     public static final String ANDROID = "Android";
     public static final String WINDOWS = "Windows";
     public static final String USER_DIR = "user.dir";
-    public static final String URL_STRING = "http://127.0.0.1:4723/wd/hub";
 
     //Android
     public static final String ANDROID_DEVICE = "Pixel 3a API 28";

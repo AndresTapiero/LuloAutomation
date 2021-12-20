@@ -3,9 +3,12 @@ package utils;
 import capabilities.LuloCapabilities;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.appmanagement.ApplicationState;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static utils.Resources.BUNDLE_ID;
 
 public class GenericActions {
 
@@ -14,7 +17,6 @@ public class GenericActions {
 
     public static void writeElementId(String id, String text) {
         MobileElement element = driver.findElementById(id);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(id)));
         driver.findElementById(id).click();
         element.sendKeys(text);
         driver.hideKeyboard();
@@ -38,5 +40,13 @@ public class GenericActions {
         driver.findElementById(id).click();
     }
 
+    public static String getAppState(){
+        ApplicationState state = driver.queryAppState(BUNDLE_ID);
+        return state.toString();
+    }
+
+    public static void closeApp() {
+        driver.closeApp();
+    }
 
 }

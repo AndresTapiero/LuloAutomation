@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Android-Test-Suite" parallel="tests" thread-count="2">
+
+    <test name="emulator1">
+        <parameter name="platformType" value="Android"/>
+        <parameter name="deviceName" value="Pixel 3a API 28"/>
+        <parameter name="platformVersion" value="9.0"/>
+        <parameter name="systemPort" value="8210"/>
+        <classes>
+            <class name="LuloRunner"/>
+        </classes>
+    </test>
+
+</suite>

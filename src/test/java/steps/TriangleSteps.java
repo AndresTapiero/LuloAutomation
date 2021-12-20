@@ -15,7 +15,6 @@ public class TriangleSteps {
         getAttributeValueById(INPUT_FIELD_SIDE_2);
         getAttributeValueById(INPUT_FIELD_SIDE_3);
         clickBtn(BTN_CALCULATE);
-        //TODO: Validate Empty Title
         Assert.assertEquals(getAttributeValueById(RESULT), TRIANGLE_EMPTY);
     }
 
@@ -28,6 +27,9 @@ public class TriangleSteps {
         Assert.assertEquals(getAttributeValueById(RESULT), SCALENE_TRIANGLE);
     }
 
+    public void appState(){
+        Assert.assertEquals(APP_RUNNING_FOREGROUND, getAppState());
+    }
 
     public boolean validateTextTitles() {
         return checkDisplayToId(TITLE_SIDE_1) && checkDisplayToId(TITLE_SIDE_2) && checkDisplayToId(TITLE_SIDE_3);

@@ -1,38 +1,39 @@
-import org.junit.After;
-import org.junit.Before;
-import org.junit.FixMethodOrder;
-import org.junit.Test;
-import org.junit.runners.MethodSorters;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 import steps.TriangleSteps;
 
-import java.net.MalformedURLException;
-
 import static capabilities.LuloCapabilities.capabilities;
+import static utils.GenericActions.closeApp;
 
-
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LuloRunner {
 
     final TriangleSteps steps = new TriangleSteps();
 
-    @Before
-    public void setupAppium() throws MalformedURLException {
-        capabilities();
+    @BeforeTest(alwaysRun = true)
+    @Parameters({"platformType", "deviceName", "platformVersion", "systemPort"})
+    public void setup(String platformType, String deviceName, String platformVersion, String systemPort) throws Exception {
+        capabilities(platformType, deviceName, platformVersion, systemPort);
     }
 
-    @Test
-    public void firstTest() {
+    @Test(priority = 1)
+    public void fillEmptyTriangle() {
         steps.validateEmptyFields();
     }
 
-    @Test
+    @Test(priority = 2)
     public void fillScaleneTriangle() {
         steps.scaleneTrianqle();
     }
 
-    //TODO: Validar estado de la aplicación esta en la actividad o murio?
-    @After
-    public void close() {
+    @Test(priority = 3)
+    public void appState() {
+        steps.appState();
+    }
 
+    @AfterTest
+    public void close() {
+        closeApp();
     }
 }
