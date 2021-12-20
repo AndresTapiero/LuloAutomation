@@ -1,19 +1,19 @@
-package capabilities;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import steps.TriangleSteps;
+
 import java.net.MalformedURLException;
 
 import static capabilities.LuloCapabilities.capabilities;
-import static utils.GenericActions.waitById;
-import static utils.GenericActions.writeElementId;
+
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LuloRunner {
 
+    final TriangleSteps steps = new TriangleSteps();
 
     @Before
     public void setupAppium() throws MalformedURLException {
@@ -21,15 +21,17 @@ public class LuloRunner {
     }
 
     @Test
-    public void firstTest(){
-        waitById("com.eliasnogueira.trianguloapp:id/txtLado1");
-        writeElementId("com.eliasnogueira.trianguloapp:id/txtLado1","5.0");
-        System.out.println("This is a success test");
+    public void firstTest() {
+        steps.validateEmptyFields();
     }
 
+    @Test
+    public void fillScaleneTriangle() {
+        steps.scaleneTrianqle();
+    }
 
     @After
-    public void close(){
+    public void close() {
 
     }
 }
