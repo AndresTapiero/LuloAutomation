@@ -9,6 +9,7 @@ public class Resources {
     public static final String ANDROID = "Android";
     public static final String WINDOWS = "Windows";
     public static final String USER_DIR = "user.dir";
+    public static final String OS_NAME = "os.name";
 
     //Android
     public static final String ANDROID_DEVICE = "Pixel 3a API 28";

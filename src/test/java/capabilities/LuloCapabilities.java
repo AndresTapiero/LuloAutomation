@@ -17,7 +17,7 @@ public class LuloCapabilities {
     public static DesiredCapabilities capabilities;
     public static AndroidDriver androidDriver;
     public static IOSDriver iosDriver;
-    public static String SO = System.getProperty("os.name");
+    public static String SO = System.getProperty(OS_NAME);
     public static final String APK_LOCATION_W = System.getProperty(USER_DIR) + "\\src\\test\\resources\\apk\\TrianguloApp.apk";
     public static final String APK_LOCATION_M = System.getProperty(USER_DIR) + "/src/test/resources/apk/TrianguloApp.apk";
 
@@ -32,7 +32,7 @@ public class LuloCapabilities {
             capabilities.setCapability(MobileCapabilityType.CLEAR_SYSTEM_FILES, true);
             capabilities.setCapability(AndroidMobileCapabilityType.SYSTEM_PORT, systemPort);
             androidDriver = new AndroidDriver(url, capabilities);
-            androidDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            androidDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         } else {
             capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
             capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, platformVersion);

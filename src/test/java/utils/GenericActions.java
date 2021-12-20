@@ -29,7 +29,6 @@ public class GenericActions {
     public static String getAttributeValueById(String id) {
         MobileElement element = driver.findElementById(id);
         return element.getText();
-
     }
 
     public static boolean checkDisplayToId(String id) {
