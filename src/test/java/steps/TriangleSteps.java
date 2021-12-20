@@ -1,6 +1,6 @@
 package steps;
 
-import org.junit.Assert;
+import org.testng.Assert;
 
 import static ui.UserInterface.*;
 import static utils.GenericActions.*;
@@ -9,9 +9,8 @@ import static utils.Resources.*;
 public class TriangleSteps {
 
     public void validateEmptyFields() {
-        Assert.assertTrue(validateTextTitles());
         waitById(INPUT_FIELD_SIDE_1);
-
+        Assert.assertTrue(validateTextTitles());
         getAttributeValueById(INPUT_FIELD_SIDE_1);
         getAttributeValueById(INPUT_FIELD_SIDE_2);
         getAttributeValueById(INPUT_FIELD_SIDE_3);
