@@ -9,7 +9,7 @@
         <parameter name="platformVersion" value="9.0"/>
         <parameter name="systemPort" value="8210"/>
         <classes>
-            <class name="LuloRunner"/>
+            <class name="runners.LuloRunner"/>
         </classes>
     </test>
 

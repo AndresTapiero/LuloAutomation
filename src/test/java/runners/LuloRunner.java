@@ -1,15 +1,26 @@
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+package runners;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.SnippetType;
+
+import net.serenitybdd.cucumber.CucumberWithSerenity;
+import org.junit.runner.RunWith;
+
 import steps.TriangleSteps;
 
 import static capabilities.LuloCapabilities.capabilities;
 import static utils.GenericActions.closeApp;
 
+@RunWith(CucumberWithSerenity.class)
+@CucumberOptions(
+        features = "src\\test\\resources\\features\\Ejemplo.feature",
+        glue = "steps",
+        tags = "",
+        snippets = SnippetType.CAMELCASE
+)
 public class LuloRunner {
-
-    final TriangleSteps steps = new TriangleSteps();
+    
+  /*  final TriangleSteps steps = new TriangleSteps();
 
     @BeforeTest(alwaysRun = true)
     @Parameters({"platformType", "deviceName", "platformVersion", "systemPort"})
@@ -35,5 +46,5 @@ public class LuloRunner {
     @AfterTest
     public void close() {
         closeApp();
-    }
+    }*/
 }

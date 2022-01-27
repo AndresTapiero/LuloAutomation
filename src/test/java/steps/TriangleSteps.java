@@ -1,6 +1,6 @@
 package steps;
 
-import org.testng.Assert;
+
 
 import static ui.UserInterface.*;
 import static utils.GenericActions.*;
@@ -8,6 +8,7 @@ import static utils.Resources.*;
 
 public class TriangleSteps {
 
+/*
     public void validateEmptyFields() {
         waitById(INPUT_FIELD_SIDE_1);
         Assert.assertTrue(validateTextTitles());
@@ -34,5 +35,6 @@ public class TriangleSteps {
     public boolean validateTextTitles() {
         return checkDisplayToId(TITLE_SIDE_1) && checkDisplayToId(TITLE_SIDE_2) && checkDisplayToId(TITLE_SIDE_3);
     }
+*/
 
 }
